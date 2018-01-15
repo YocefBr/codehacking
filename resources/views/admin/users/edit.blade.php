@@ -41,6 +41,15 @@
                         {!! Form::submit('Update User', ['class'=> 'btn btn-success']) !!}
                     </div>
                 {!! Form::close() !!}
+                
+
+                {!! Form::model($user, ['method' => 'DELETE', 'action'=>['AdminUsersController@destroy', $user->id]]) !!}
+                {{csrf_field()}}
+                
+                    <div class="form-group">
+                        {!! Form::submit('Delete User', ['class'=> 'btn btn-danger']) !!}
+                    </div>
+            {!! Form::close() !!}
         </div>
   </div>
   <div class="row">
